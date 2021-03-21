@@ -1,0 +1,1055 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.eot);
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.eot?#iefix) format('embedded-opentype'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.woff2) format('woff2'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.woff) format('woff'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.eot);
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.woff2) format('woff2'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.woff) format('woff'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-ExtraBold.eot);
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-ExtraBold.eot?#iefix) format('embedded-opentype'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-ExtraBold.woff2) format('woff2'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-ExtraBold.woff) format('woff'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-ExtraBold.ttf) format('truetype');
+}
+/* 공통 스타일 --------------------------------------------------------------------------------------------------------------------------------------------------------*/
+* {
+    padding: 0;
+    margin: 0;
+    color:#000000;
+    /*font-family: "Noto Sans KR", sans-serif;*/
+    font-family: 'Nanum Gothic', sans-serif;
+}
+ul, ol { list-style: none; }
+a {text-decoration: none;}
+html, body { width: 100%; height: 100%; }
+.clear:after { content:''; display: block; clear: both; float: none; }
+
+table { border: 1px solid #e4e8ed;}
+
+td {
+    width: 16%;
+    text-align: center;
+    padding: 20px 0px;
+    border-right: 1px solid #e4e8ed;
+    border-bottom: 1px solid #e4e8ed;
+}
+
+td:last-child { border-right: 0px; }
+#tr_border_none td { border-bottom: 0; }
+
+#container { width: auto; }
+
+fieldset { border: 0; }
+
+/* 상단 영역 --------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* -------- 우측 상단 메뉴 ----------------------------------------------------------------*/
+#top_mn {
+    width: 1130px;
+    margin: auto;
+    text-align: right;
+    padding: 10px 0;
+    font-size: 11px;
+    color: #404040;
+}
+#top_mn li { display: inline-block; }
+
+/* -------- 로고, 검색창 ----------------------------------------------------------------*/
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e4e8eb;
+    z-index: 500;
+}
+
+#header_top { width: 1130px; margin: auto; }
+
+#header_search {
+    width: 1130px;
+    margin: auto;
+    padding: 20px 0px 50px 0px;
+}
+
+#logo {
+    float: left;
+    width: 222px;
+    height: 52px;
+    vertical-align: top;
+    background: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png) no-repeat;
+    background-size: 440px 410px;
+    background-position: 0 -158px;
+    vertical-align: top;
+    text-indent: -10000px;
+}
+
+ #search_bar {
+    float: left;
+    width: auto;
+    padding-left: 30px;
+}
+
+#search_bar label {
+    /** https://yeoninim.tistory.com/36  -->  css clip 사용하여 안보이게 설정 */
+    position:absolute !important;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    clip:rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip:rect(1px, 1px, 1px, 1px);
+}
+
+#search_bar input {
+    width: 582px;
+    height: 52px;
+    border: 2px solid #19ce60;
+}
+
+/* ------------------- 커서 깜빡임 ------------------------------*/
+.cursor {
+       position: relative;
+}
+.cursor i {
+       position: absolute;
+       width: 1px;
+       height: 40%;
+       background-color: gray;
+       left: 45px;
+       top: 30%;
+       animation-name: blink;
+       animation-duration: 870ms;
+       animation-iteration-count: infinite;
+       opacity: 1;
+}
+
+.cursor input:focus + i {
+       display: none;
+}
+
+@keyframes blink {
+       from { opacity: 1; }
+       to { opacity: 0; }
+}
+
+/* -------- 메뉴 ----------------------------------------------------------------*/
+#header_bottom {
+    border-bottom: 1px solid #e4e8eb;
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.12);
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.12);
+    margin-top:160px;
+    padding: 15px 0px;
+    width: auto;
+}
+
+#header_bottom_area {
+    width: 1130px;
+    margin: auto;
+}
+
+#header_bottom_area #navi {
+    float: left;
+}
+
+#header_bottom_area #navi ul {
+    width: auto;
+}
+
+#navi li {
+    display: inline-block;
+    padding-right: 13px;
+}
+
+#header_bottom_area #more_view {
+    float: left;
+    width: 5%;
+}
+
+#header_bottom_area #ranking {
+    float: left;
+    width: 20%;
+}
+
+
+/* 중간 영역 --------------------------------------------------------------------------------------------------------------------------------------------------------*/
+#content {
+    width: 1130px;
+    padding: 20px 30px;
+    margin: 0 auto;
+    letter-spacing: -.2px;
+}
+
+/* -------- 아티클 ----------------------------------------------------------------*/
+#article {
+    float: left;
+    width: 750px;
+}
+
+/* ------------------- 탑배너 ------------------------------*/
+.topbn { width: auto; }
+.topbn img {
+    width: 100%;
+}
+
+/**------연합뉴스---------*/
+
+/* ------------------- 뉴스배너1 ------------------------------*/
+.newsbn1 {
+    padding: 12px 15px 11px 15px;
+    background-color: #f7f9fa;
+    border: 1px solid #dae1e6;
+    line-height: 24px;
+    margin-top:12px;
+}
+
+.newsbn1 li {
+    display: inline-block;
+    font-size: 14px;
+}
+
+.newsbn1 li:last-child {
+    float: right;
+}
+
+/* ------------------- 뉴스배너2 ------------------------------*/
+
+
+.newsbn2 {
+    padding: 22px 0 16px;
+    font-size: 14px;
+    line-height: 18px;
+    position: relative;
+}
+
+
+.newsbn2_icon1, .newsbn2_title, .newsbn2_title2, .newsbn2_title3 {float: left;}
+.newsbn2_icons {float: right;}
+.newsbn2_icons div {
+    display: inline-block;
+}
+
+.newsbn2_icons {text-align: right;}
+
+.newsbn2_pd { margin-bottom: 16px; display: block;}
+
+.newsbn2 td {
+    width: 16%;
+    padding: 20px 0px;
+}
+
+.newsbn2 td img {
+    height: 20px;
+}
+
+
+.newsbnbt {
+    position: absolute;
+    top:162px;
+    left: -22px;
+    width: 44px;
+    height: 44px;
+    /*background: #ff0000;*/
+    background-size: 440px 410px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-position: -224px -158px;
+    background-repeat: no-repeat;
+    z-index: 100;
+    text-indent: -1000px;
+}
+
+.newsbnbt a {
+    display: block;
+    width: 44px;
+    height: 44px;
+}
+
+
+
+/* ------------------- 오늘 읽을만한 글 ------------------------------*/
+.read { padding:20px 0px 17px 0px; }
+.read_left { float: left; }
+.read_right { float: right; }
+.read_right div { display: inline-block; }
+
+.today_art { position: relative; }
+
+.today_art td {
+    width: 12.5%;
+    padding: 13px 0px;
+    border-bottom: 0;
+}
+
+.today_art td:nth-child(2):hover {
+    background-color: #eabf01;
+    color: #fff;
+    cursor: pointer;
+}
+
+.today_art td:nth-child(2) {
+    background-color: #eabf01;
+    color: #fff;
+}
+
+.today_art_bt {
+    position: absolute;
+    top:6px;
+    left: -22px;
+    width: 44px;
+    height: 44px;
+    /*background: #ff0000;*/
+    background-size: 440px 410px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-position: -86px -342px;
+    background-repeat: no-repeat;
+    z-index: 100;
+    text-indent: -1000px;
+}
+.today_art_bt a {
+    display: block;
+    width: 44px;
+    height: 44px;
+}
+
+.today_art_bt2 {
+    position: absolute;
+    top:6px;
+    right: -22px;
+    width: 44px;
+    height: 44px;
+    /*background: #ff0000;*/
+    background-size: 440px 410px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-position: -128px -342px;
+    background-repeat: no-repeat;
+    z-index: 100;
+    text-indent: -2000px;
+}
+.today_art_bt2 a {
+    display: block;
+    width: 44px;
+    height: 44px;
+}
+
+.conimg {
+    float: left;
+    width: 25%;
+}
+
+.context {
+    float: right;
+    width: 73%;
+    margin: 2px;
+}
+
+.context span { display: block; }
+
+.parent_art {
+
+    margin: 20px;
+}
+
+.parent_art li{
+    display: inline-block;
+    margin: 5px;
+}
+/* -------- 에이사이드 ----------------------------------------------------------------*/
+#aside {
+    float: right;
+    width: 350px;
+}
+
+#login_box {
+    padding: 16px 16px 12px 17px;
+    background-color: #f7f9fa;
+    border: 1px solid #dae1e6;
+}
+
+
+/** ----------- 김지효 ---------*/
+.newsbn2_icon1{
+    display: inline-block;
+    width: 27px;
+    height: 24px;
+    background-size: 440px 410px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-position: -228px -296px;
+    background-repeat: no-repeat;
+    text-indent: -1000px;
+    vertical-align: center;
+}
+
+.newsbn2_icon2{
+    display: inline-block;
+    width: 14px;
+    height: 13px;
+    background-size: 440px 410px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-position: -420px -379px;
+    background-repeat: no-repeat;
+    text-indent: -2000px;
+}
+
+.newsbn2_icon3 {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-size: 440px 410px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-position: -153px -327px;
+    background-repeat: no-repeat;
+    text-indent: -10000px;
+}
+
+.newsbn2_icon4 {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-size: 440px 410px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-position: -420px -276px;
+    background-repeat: no-repeat;
+    text-indent: -1000px;
+}
+
+
+.conimg {
+    float: left;
+    width: 25%;
+}
+#parenti span{
+    font-weight: bold;
+    color: #eabf01;
+    font-size: 13px;
+}
+
+.text_title span {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.text_title span:hover {
+    text-decoration: underline;
+}
+
+.text_writer span {
+    font-size: 14px;
+    color: #505050;
+}
+
+.context {
+    float: right;
+    width: 73%;
+    text-overflow: ellipsis;
+}
+
+.context ul li {
+    padding: 1px;
+}
+
+
+
+
+.parent_art {
+
+    margin: 20px;
+}
+
+
+
+.parent_art li{
+    display: inline-block;
+    margin: 5px;
+}
+
+.newsbn2_icons {
+
+}
+
+#navi a {
+
+}
+
+#navi span a {
+    font-weight: bold;
+    color: #03c75a;
+}
+
+#header_bottom_area #navi {
+    float: left;
+    width: 75%;
+}
+
+.newsbn1 span a {
+    font-weight: bold;
+}
+
+#header_bottom {
+    font-size: 14px;
+}
+
+.newsbn2_pd {
+    vertical-align: bottom;
+}
+
+#header_bottom_area #more_view,
+#header_bottom_area #ranking  {
+
+    font-size: 12px;
+    color: #505050;
+}
+
+
+.context ul li{
+    display: block;
+    margin: 2px;
+}
+
+.parent_art a{
+    display: block;
+}
+
+.newsbn2_title{
+    font-weight: bold;
+}
+
+.read_left span {
+    font-size: 12px;
+    color: #808080;
+}
+
+.read_right {
+    position: relative;
+}
+
+.read_right span{
+    font-size: 14px;
+    color: #505050;
+}
+
+
+.setimg a {
+    position: absolute;
+    right: 83px;
+    bottom: 3.8px;
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background-size: 440px 410px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-position: -319px -308px;
+    background-repeat: no-repeat;
+    text-indent: -10000px;
+}
+/**
+#search_bar input {
+    position: relative;
+}
+
+.search_bar_img{
+    display: inline-block;
+}
+.kbdimg {
+    position: absolute;
+
+    width: 20px;
+    height: 12px;
+    background-size: 440px 410px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-position: -420px -248px;
+    background-repeat: no-repeat;
+    text-indent: -10000px;
+}
+
+.triimg {
+    width: 10px;
+    height: 5px;
+    background-size: 440px 410px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-position: -404px -258px;
+    background-repeat: no-repeat;
+    text-indent: -3000px;
+}
+
+.schimg1 {
+    width: 56px;
+    height: 56px;
+    background-color: #19ce60;
+    text-indent: -3000px;
+}
+
+.schimg2 {
+    width: 22px;
+    height: 22px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-position: -167px -386px;
+    background-size: 440px 410px;
+    background-repeat: no-repeat;
+    text-indent: -3000px;
+}
+*/
+
+.parent_art{
+    padding-bottom: 20px;
+    border-bottom: 0.5px solid #ccc;
+}
+#article { position: relative; }
+
+.plusbt a{
+    position: absolute;
+    bottom: 0px;
+    left: 350px;
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-size: 440px 410px;
+    background-position: 0 -342px;
+    background-repeat: no-repeat;
+    text-indent:-3000px;
+}
+
+#newmore {
+    position: absolute;
+    bottom: -23px;
+    left:313px;
+    color: #808080;
+}
+
+#top_mn {
+    position: relative;
+}
+.gonaver1 {
+    position: absolute;
+    right: 140px;
+    top: 6px;
+}
+
+.gonaver1:hover, .newsline:hover {
+    text-decoration: underline;
+}
+
+.gonaver2 a{
+    position: absolute;
+    right: 110px;
+    top: 2px;
+    width: 26px;
+    height: 26px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-size: 440px 410px;
+    background-position: -382px -213px;
+    background-repeat: no-repeat;
+    text-indent: -1000px;
+}
+
+.jnnaver a{
+    position: absolute;
+    right: 45px;
+    top: 9px;
+    width: 60px;
+    height: 10px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-size: 440px 410px;
+    background-position: -333px -267px;
+    background-repeat: no-repeat;
+    text-indent:-3000px;
+}
+
+.happy a{
+    position: absolute;
+    right: 0px;
+    top: 9px;
+    width: 34px;
+    height: 11px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-size: 440px 410px;
+    background-position: -257px -308px;
+    background-repeat: no-repeat;
+    text-indent:-2000px;
+}
+
+.today_td { font-weight: bold; }
+
+.today_art td:first-child:hover{ color: #42be6f; }
+
+.today_art td:nth-child(3):hover{ color: #1c3091; }
+
+.today_art td:nth-child(4):hover{ color: #8449ca; }
+
+.today_art td:nth-child(5):hover{ color: #955f0e; }
+
+.today_art td:nth-child(6):hover{ color: #5853a0; }
+
+.today_art td:nth-child(7):hover{ color: #7e251b; }
+
+.today_art td:last-child:hover{ color: #6acc59; }
+/**
+.context li span:first-child {
+    color: ;
+}
+*/
+
+.read{position: relative;}
+
+.read_left span{
+    position: absolute;
+    top: 22px;
+    left: 120px;
+}
+
+.read_right div {
+    display: inline-block;
+}
+/** ------------------ aside --------------------*/
+
+
+
+
+
+
+
+
+
+
+/* footer --------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+#footer {
+    background-color: #fafbfc;
+    border-top: 1px solid #e4e8eb;
+}
+
+#footer_inner {
+    width: 1130px;
+    padding: 0 30px 92px;
+    margin: 0 auto;
+}
+
+
+/* ------------------- 배너 ------------------------------*/
+
+
+#footer .banner_area {
+    overflow: hidden;
+    padding: 24px 0;
+    width: 1130px;
+
+}
+
+#footer .ft_bncon {
+    overflow: hidden;
+    width: 190px;
+    height: 86px;
+    padding: 2px 2px 0 16px;
+    font-size: 12px;
+    line-height: 1.25;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+#footer .ft_bntext1:hover {
+    text-decoration: underline;
+}
+
+#footer .ft_bnimg {
+    float: left;
+}
+
+#footer img {
+    width: 160px;
+    height: 86px;
+    display: inline-block;
+}
+
+#footer .da_public {
+    width: auto;
+    float: left;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+#footer .ft_bntitle {
+    overflow: hidden;
+    font-weight: 700;
+    letter-spacing: -0.25px;
+    color: #58c464;
+    white-space: nowrap;
+}
+#footer .ft_bntext1 {
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.26px;
+    color: #242424;
+    white-space: nowrap;
+}
+#footer .ft_bntext2 {
+    overflow: hidden;
+    line-height: 18px;
+    letter-spacing: -0.25px;
+    color: #424242;
+    white-space: nowrap;
+    margin-top: 8px;
+}
+
+#footer .da_public .ft_bncon span {
+    display: block;
+}
+
+
+
+/* ------------------- notice ------------------------------*/
+
+#footer .notice_area {
+    overflow: hidden;
+    padding: 16px 0 15px;
+    border-top: 1px solid #e4e8eb;
+    font-size: 12px;
+    line-height: 16px;
+    color: #202020;
+}
+
+#footer .notice_box {
+    float: left;
+}
+
+#footer .notice_msg a {
+    color: #777;
+    margin-left: 10px;
+}
+
+#footer .notice_box a:hover {
+    text-decoration: underline;
+}
+
+#footer .ft_service a:hover {
+    text-decoration: underline;
+}
+
+#footer .ft_service {
+    display: inline-block;
+    float: right;
+}
+
+#footer .ft_sv_more {
+    display: inline-block;
+    width: 8px;
+    height: 12px;
+    background-position: -408px -110px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    content: '';
+    margin-left: 10px;
+    vertical-align: -2px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-size: 440px 410px;
+}
+
+
+/* ------------------- aside ------------------------------*/
+
+#footer .aside_area {
+    overflow: hidden;
+    border-top: 1px solid #e4e8eb;
+}
+
+#footer .aside_area .link_pt a {
+    color: #777777;
+    height: 16px;
+    font-size: 12px;
+}
+
+
+#footer .partner_box_wrap {
+    float: left;
+    width: 780px;
+    padding: 20px 0;
+}
+
+#footer .partner_box {
+    vertical-align: middle;
+    height: 16px;
+    margin-top: 9px;
+}
+
+#footer #partner_box1 {
+    margin-top: 0;
+}
+
+
+#footer .partner_box .pt_title {
+    display: inline-block;
+    float: left;
+    width: 87px;
+    color: #202020;
+    height: 16px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 3px;
+
+}
+
+
+#footer .service_box_wrap {
+    overflow: hidden;
+    float: left;
+    width: 350px;
+    padding: 28px 0;
+}
+
+.service_box {
+    overflow: hidden;
+    float: left;
+    max-width: 150px;
+    height: 48px;
+}
+
+
+#footer .sv_img img {
+    width: 48px;
+    height: 48px;
+    vertical-align: top;
+    display: block;
+    float: right;
+    padding-left: 10px;
+}
+
+.sv_title {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    padding-top: 2px;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.sv_con {
+    display: block;
+    color: grey;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    padding-top: 2px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #777;
+}
+
+.sv_text{
+    display: block;
+    float: left;
+}
+
+.sv_con a:hover {
+    text-decoration: underline;
+}
+
+#sv_title1 {
+    margin-left: 40px;
+}
+
+/* ------------------- corp ------------------------------*/
+#footer .corp_area {
+    padding-top: 25px;
+    border-top: 1px solid #e4e8eb;
+}
+
+.list_corp li {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.list_corp li a {
+    color: #777;
+}
+
+#private {
+    font-weight: bold;
+}
+
+.list_corp a:hover {
+    text-decoration: underline;
+}
+
+
+/* ------------------- ft_button ------------------------------*/
+
+
+.dark_bt {
+    position: fixed;
+    right: 78px;
+    bottom: 20px;
+    display: inline-block;
+    width: 136px;
+    height: 53px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-size: 440px 410px;
+    background-position: -270px -55px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    z-index: 100;
+    text-indent: -2000px;
+
+}
+
+.dark_bt:hover {
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-size: 440px 410px;
+    background-position: -270px -112px;
+    background-repeat: no-repeat;
+}
+
+.top_bt {
+    position: fixed;
+    right: 24px;
+    bottom: 22px;
+    z-index: 100;
+    display: inline-block;
+    width: 51px;
+    height: 51px;
+    background-position: -203px -212px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    content: '';
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-size: 440px 410px;
+    text-indent: -2000px;
+}
+
+.top_bt:hover {
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-size: 440px 410px;
+    background-position: -150px -212px;
+    background-repeat: no-repeat;
+}
+
+
+#footer {
+    position: relative;
+}
+
+
+
+
+
+
+

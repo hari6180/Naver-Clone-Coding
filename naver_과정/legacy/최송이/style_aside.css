@@ -1,0 +1,178 @@
+@charset "utf-8";
+
+#aside { float: right; width: 350px; font-size: 12px; }
+
+.blind { position: absolute; text-indent: -10000px; }
+
+.card_nav { position: absolute; top: 11px; right: 10px; overflow: hidden; }
+.shop_nav { float: left; }
+.shop_page_control { position: relative; left: 113px; overflow: hidden; }
+.btn_nav { float: left; background-color: #fff; border: 1px solid #e4e8eb; }
+
+.btn_nav_text {
+    float: left;
+    min-width: 61px;
+    line-height: 20px;
+    color: grey;
+    text-align: center;
+    vertical-align: top
+}
+
+.btn_nav_text b { color:#202020; }
+.btn_nav:hover { background-color: #f7f9fa; }
+.btn_nav:last-child { border-left: 0px; }
+.card_nav3 .btn_nav:last-child { border-left: 1px solid #e4e8eb; }
+
+.btn_prev:before {
+    display: inline-block;
+    width: 6px;
+    height: 9px;
+    background-position: -351px -296px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    content: '';
+    margin: 7px 8px 6px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-size: 440px 410px;
+}
+
+.btn_next:before {
+    display: inline-block;
+    width: 6px;
+    height: 9px;
+    background-position: -335px -296px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    content: '';
+    margin: 7px 8px 6px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-size: 440px 410px;
+}
+
+/* -------- 로그인박스 ----------------------------------------------------------------*/
+#login_box {
+    padding: 16px 16px 12px 17px;
+    background-color: #f7f9fa;
+    border: 1px solid #dae1e6;
+}
+
+.login_msg { padding-left: 3px; color: grey; }
+
+.link_login {
+    display: block;
+    padding: 15px 0;
+    margin-top: 11px;
+    background-color: #19ce60;
+    border: 1px solid #15c654;
+    border-radius: 2px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    width: auto;
+}
+
+.ico_naver {
+    display: inline-block;
+    width: 60px;
+    height: 12px;
+    background-position: -271px -267px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    margin: 2px 5px 0 0;
+    text-indent: -10000px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-size: 440px 410px;
+}
+
+.login_sub_bt { padding: 14px 8px 0 4px; }
+
+.id_find:before {
+    display: inline-block;
+    width: 10px;
+    height: 14px;
+    background-position: -408px -55px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    content: '';
+    margin: 1px 5px 1px 0px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-size: 440px 410px;
+}
+
+.pw_find:before {
+    background-color: #d7dce0;
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    content: '';
+    margin: 0 5px 0 2px;
+    vertical-align: 3px;
+}
+
+.id_find, .pw_find { color: #404040; }
+
+.id_find:hover { text-decoration: underline; }
+.pw_find:hover { text-decoration: underline; }
+
+.join:before {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background-position: -332px -308px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    content: '';
+    margin: 2px 5px 0 0;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+    background-size: 440px 410px;
+}
+
+.join { float: right; }
+.join:hover { text-decoration: underline; }
+.join_icon { display: inline-block; text-indent: -10000px; }
+.join_text { display: inline-block; }
+
+
+/* -------- 타임스퀘어 ----------------------------------------------------------------*/
+.timesquare {
+   width: auto;
+   height: 47px;
+   margin: 12px 0;
+   border: 1px solid #dae1e6;
+   letter-spacing: -.25px;
+   position: relative;
+}
+
+.news_card { padding: 14px 0 13px 16px; float: left; }
+
+.news_badge {
+    height: 18px;
+    padding: 0 7px;
+    border: 1px solid #202020;
+    border-radius: 10px;
+    color: #202020;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 18px;
+    vertical-align: top;
+    text-decoration: none;
+    font-style: normal;
+}
+
+.news {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 17px;
+    color: #404040;
+    padding-left: 2px;
+}
+
+.news:hover { text-decoration: underline; }
+
+
+/* -------- 중간 이미지 배너 ----------------------------------------------------------------*/
+.bnimg { border: 1px solid #dae1e6; display: block; }
+.bnimg img { width: 100%; }
